@@ -121,6 +121,10 @@ public class HealthManager : MonoBehaviour
     // resets status, visuals and takes player back to a set point
     public void Respawn()
     {
+       transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+       gameObject.SetActive(true);
+
         IsDead = false;
 
         GetComponent<Collider>().enabled = true;

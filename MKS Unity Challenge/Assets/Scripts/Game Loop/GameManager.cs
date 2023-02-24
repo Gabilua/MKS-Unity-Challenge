@@ -49,15 +49,11 @@ public class GameManager : MonoBehaviour
 
     void SetupPlayer()
     {
-        _playerHealthManager.transform.position = Vector3.zero;
-        _playerHealthManager.transform.rotation = Quaternion.identity;
-        _playerHealthManager.gameObject.SetActive(true);
-
         _playerHealthManager.OnJustDied += EndMatch;
 
-        UIManager.uiManagerInstance.NewHealthBar(_playerHealthManager);
-
         _playerHealthManager.Respawn();
+
+        UIManager.uiManagerInstance.NewHealthBar(_playerHealthManager);
     }
 
     public void StartMatch()
